@@ -51,22 +51,28 @@ public class Olvaso {
             for (int i = 0; i < kolcsonzottKonyvek.length; i++) {
                   if (kolcsonzottKonyvek[i]==null){
                       kolcsonzottKonyvek[i]=konyv;
+                      konyv.setKolcsonozheto(false);
                       i= kolcsonzottKonyvek.length;
                       System.out.println("A köny sikeresen kikölcsönözve.");
                       vanHely=true;
                   }
             }
-            if (!vanHely){
+            if (!vanHely) {
                 System.out.println("Nem vehetünk ki több könyvet.");
             }
-
         }
         else{
             System.out.println("Nem kölcsönözhető a könyv.");
         }
     }
 
-    public void konyvVisszahoz(Konyv kony){
+    public void konyvVisszahoz(Konyv konyv){
+        for (int i = 0; i < kolcsonzottKonyvek.length; i++) {
+            if (konyv.getAzonosito().equals(kolcsonzottKonyvek[i].getAzonosito())){
+                kolcsonzottKonyvek[i]=null;
+                konyv.setKolcsonozheto(true);
+            }
+        }
 
     }
 }
