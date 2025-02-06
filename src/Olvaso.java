@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Olvaso {
     private String azonosito;
@@ -74,5 +75,15 @@ public class Olvaso {
             }
         }
 
+    }
+
+    @Override
+    public String toString() {
+        return "Olvaso{" +
+                "azonosito='" + azonosito + '\'' +
+                ", nev='" + nev + '\'' +
+                ", email='" + email + '\'' +
+                ", kolcsonzottKonyvek=" + Arrays.toString(kolcsonzottKonyvek) +
+                '}';
     }
 }
